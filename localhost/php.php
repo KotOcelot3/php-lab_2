@@ -1,30 +1,58 @@
 <?php
-$Y = array (
-    '10', '2', '3', '4', '5', '6', '112', '40'
-);
 
-$X = array (
-    '12', '32', '5', '7', '8', '11', '123', '50'
-);
+$massiveX = [
 
-function if_natural($Y){
-    if($Y==1 or $Y==0)return false;
-    for($d=2; $d*$d<=$Y; $d++)
-    {
-        if($Y%$d==0)return false;
-    }
-    return true;
+    rand(0, 30),
+    rand(0, 30),
+    rand(0, 30),
+    rand(0, 30),
+    rand(0, 30),
+    rand(0, 30)
+
+];
+
+
+
+foreach ($massiveX as $X) {
+    $X = sort($massiveX);
+    $X = max($massiveX);
+    $X = array_slice($massiveX, 4);
 }
 
-foreach($Y as $key => $value)
-{
-    if(!if_natural($value)) unset($Y["$key"]);
+
+$massiveY = [
+
+    rand(0, 30),
+    rand(0, 30),
+    rand(0, 30),
+    rand(0, 30),
+    rand(0, 30),
+    rand(0, 30)
+
+];
+
+foreach ($massiveY as $Y) {
+    $Y = array_slice($massiveY, 4);
 }
-$Z = if_natural($Y);
 
-echo $Z;
+$massiveT = array_merge($X, $Y);
+$massiveZ = array_unique($massiveT);
+var_dump($massiveZ);
 
-$max= $X;
+if (in_array(7, $massiveZ) || in_array(17, $massiveZ) ||
+    in_array(27, $massiveZ) || in_array(37, $massiveZ) ||
+    in_array(47, $massiveZ) || in_array(57, $massiveZ) ||
+    in_array(67, $massiveZ) || in_array(70, $massiveZ) ||
+    in_array(71, $massiveZ) || in_array(72, $massiveZ) ||
+    in_array(73, $massiveZ) || in_array(74, $massiveZ) ||
+    in_array(75, $massiveZ) || in_array(76, $massiveZ) ||
+    in_array(77, $massiveZ) || in_array(78, $massiveZ) ||
+    in_array(79, $massiveZ) || in_array(87, $massiveZ) ||
+    in_array(97, $massiveZ)) {
 
+    echo "МассивZ соддержит числа, в которых есть цифра 7";
+}  else {
+    echo "МассивZ не соддержит числа, в котором есть цифра 7";
+}
 
 
