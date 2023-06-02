@@ -40,7 +40,7 @@ $massiveZ = array_unique($massiveT);
 var_dump($massiveZ);
 
 if (in_array(7, $massiveZ) || in_array(17, $massiveZ) ||
-    in_array(27, $massiveZ) || in_array(37, $massiveZ) ||
+    in_array(27, $massiveZ) || in_array(37, $massiveZ) || {
     
     echo "МассивZ соддержит числа, в которых есть цифра 7";
 }  else {
